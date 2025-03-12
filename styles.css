@@ -1,0 +1,455 @@
+/* General Styles */
+body {
+  font-family: "Poppins", sans-serif;
+  margin: 0;
+  padding: 0;
+  background-color: #f4f4f9;
+  color: #333;
+}
+
+/* Header */
+header {
+  background: rgba(0, 0, 0, 0.8);
+  color: white;
+  padding: 15px 30px;
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  position: fixed;
+  width: 100%;
+  top: 0;
+  left: 0;
+  z-index: 1000;
+}
+
+.logo h1 {
+  font-size: 1.8em;
+  margin: 0;
+  font-weight: 600;
+}
+
+nav ul {
+  list-style: none;
+  margin: 0;
+  padding: 0;
+  display: flex;
+}
+
+nav ul li {
+  margin: 0 15px;
+}
+
+nav ul li a {
+  color: white;
+  text-decoration: none;
+  font-weight: 400;
+  transition: color 0.3s ease;
+}
+
+nav ul li a:hover {
+  color: #28a745;
+}
+
+.login-btn {
+  background: #28a745;
+  padding: 8px 15px;
+  border-radius: 5px;
+}
+
+.login-btn:hover {
+  background: #218838;
+}
+
+/* Hero Section */
+.hero {
+  background: linear-gradient(135deg, #007bff, #00bfff);
+  color: white;
+  height: 100vh;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  text-align: center;
+  padding: 0 20px;
+  position: relative;
+}
+
+.hero-content {
+  max-width: 700px;
+  animation: fadeInUp 1s ease;
+}
+
+.hero h2 {
+  font-size: 2.5em;
+  font-weight: 700;
+  margin-bottom: 10px;
+}
+
+.hero p {
+  font-size: 1.2em;
+  margin-bottom: 20px;
+}
+
+.hero-buttons {
+  display: flex;
+  justify-content: center;
+  gap: 15px;
+}
+
+.btn {
+  text-decoration: none;
+  padding: 12px 25px;
+  font-size: 1.1em;
+  font-weight: 600;
+  border-radius: 5px;
+  transition: 0.3s ease;
+}
+
+.primary-btn {
+  background: #28a745;
+  color: white;
+}
+
+.primary-btn:hover {
+  background: #218838;
+}
+
+.secondary-btn {
+  background: white;
+  color: #007bff;
+  border: 2px solid #007bff;
+}
+
+.secondary-btn:hover {
+  background: #007bff;
+  color: white;
+}
+
+/* Features Section */
+.features {
+  padding: 60px 20px;
+  text-align: center;
+  background: white;
+}
+
+.features h2 {
+  font-size: 2em;
+  margin-bottom: 40px;
+  font-weight: 600;
+  animation: fadeIn 1s ease;
+}
+
+.feature-cards {
+  display: flex;
+  justify-content: center;
+  gap: 30px;
+  flex-wrap: wrap;
+}
+
+.feature-card {
+  background: #f4f4f9;
+  padding: 20px;
+  border-radius: 10px;
+  width: 250px;
+  text-align: center;
+  transition: transform 0.3s ease, box-shadow 0.3s ease;
+}
+
+.feature-card:hover {
+  transform: translateY(-10px);
+  box-shadow: 0 10px 20px rgba(0, 0, 0, 0.1);
+}
+
+.feature-card i {
+  font-size: 2.5em;
+  margin-bottom: 10px;
+  color: #007bff;
+}
+
+.feature-card h3 {
+  margin: 10px 0;
+  font-size: 1.2em;
+}
+
+/* Course Details Section */
+.course-details {
+  padding: 100px 20px;
+  text-align: center;
+}
+
+.course-details h2 {
+  font-size: 2.5em;
+  margin-bottom: 20px;
+  font-weight: 600;
+  color: #333;
+}
+
+.course-details p {
+  font-size: 1.2em;
+  margin-bottom: 20px;
+}
+
+.video-container {
+  margin-top: 30px;
+}
+
+/* Signup Section */
+.signup-section {
+  padding: 100px 20px;
+  text-align: center;
+  background: white;
+  min-height: 100vh;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+}
+
+.signup-section h2 {
+  font-size: 2.5em;
+  margin-bottom: 20px;
+  font-weight: 600;
+  color: #333;
+  animation: fadeInUp 1s ease;
+}
+
+.signup-section form {
+  background: #f4f4f9;
+  padding: 30px;
+  border-radius: 10px;
+  box-shadow: 0 4px 10px rgba(0, 0, 0, 0.1);
+  width: 100%;
+  max-width: 400px;
+  text-align: left;
+  animation: fadeIn 1s ease;
+}
+
+.signup-section label {
+  display: block;
+  margin-bottom: 8px;
+  font-weight: 500;
+  color: #555;
+}
+
+.signup-section input {
+  width: 100%;
+  padding: 10px;
+  margin-bottom: 20px;
+  border: 1px solid #ddd;
+  border-radius: 5px;
+  font-size: 1em;
+  transition: border-color 0.3s ease;
+}
+
+.signup-section input:focus {
+  border-color: #007bff;
+  outline: none;
+}
+
+.signup-section button {
+  width: 100%;
+  padding: 12px;
+  background: #28a745;
+  color: white;
+  border: none;
+  border-radius: 5px;
+  font-size: 1.1em;
+  font-weight: 600;
+  cursor: pointer;
+  transition: background 0.3s ease;
+}
+
+.signup-section button:hover {
+  background: #218838;
+}
+
+.signup-section p {
+  margin-top: 20px;
+  font-size: 0.9em;
+  color: #555;
+}
+
+.signup-section a {
+  color: #007bff;
+  text-decoration: none;
+  transition: color 0.3s ease;
+}
+
+.signup-section a:hover {
+  color: #0056b3;
+}
+
+/* Login Section */
+.login-section {
+  padding: 100px 20px;
+  text-align: center;
+  background: white;
+  min-height: 100vh;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+}
+
+.login-section h2 {
+  font-size: 2.5em;
+  margin-bottom: 20px;
+  font-weight: 600;
+  color: #333;
+  animation: fadeInUp 1s ease;
+}
+
+.login-section form {
+  background: #f4f4f9;
+  padding: 30px;
+  border-radius: 10px;
+  box-shadow: 0 4px 10px rgba(0, 0, 0, 0.1);
+  width: 100%;
+  max-width: 400px;
+  text-align: left;
+  animation: fadeIn 1s ease;
+}
+
+.login-section label {
+  display: block;
+  margin-bottom: 8px;
+  font-weight: 500;
+  color: #555;
+}
+
+.login-section input {
+  width: 100%;
+  padding: 10px;
+  margin-bottom: 20px;
+  border: 1px solid #ddd;
+  border-radius: 5px;
+  font-size: 1em;
+  transition: border-color 0.3s ease;
+}
+
+.login-section input:focus {
+  border-color: #007bff;
+  outline: none;
+}
+
+.login-section button {
+  width: 100%;
+  padding: 12px;
+  background: #28a745;
+  color: white;
+  border: none;
+  border-radius: 5px;
+  font-size: 1.1em;
+  font-weight: 600;
+  cursor: pointer;
+  transition: background 0.3s ease;
+}
+
+.login-section button:hover {
+  background: #218838;
+}
+
+.login-section p {
+  margin-top: 20px;
+  font-size: 0.9em;
+  color: #555;
+}
+
+.login-section a {
+  color: #007bff;
+  text-decoration: none;
+  transition: color 0.3s ease;
+}
+
+.login-section a:hover {
+  color: #0056b3;
+}
+
+/* Dashboard Section */
+.dashboard {
+  padding: 100px 20px;
+  text-align: center;
+}
+
+.dashboard h2 {
+  font-size: 2.5em;
+  margin-bottom: 20px;
+  font-weight: 600;
+  color: #333;
+}
+
+.course-list {
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: center;
+  gap: 20px;
+}
+
+.course-card {
+  background: #f4f4f9;
+  padding: 20px;
+  border-radius: 10px;
+  width: 300px;
+  text-align: left;
+  transition: transform 0.3s ease, box-shadow 0.3s ease;
+}
+
+.course-card:hover {
+  transform: translateY(-10px);
+  box-shadow: 0 10px 20px rgba(0, 0, 0, 0.1);
+}
+
+.course-card h3 {
+  margin: 0 0 10px;
+  font-size: 1.5em;
+  font-weight: 600;
+}
+
+.course-card p {
+  margin: 0 0 10px;
+  font-size: 1em;
+  color: #555;
+}
+
+.course-card .register-btn {
+  background: #28a745;
+  color: white;
+  border: none;
+  padding: 10px 20px;
+  border-radius: 5px;
+  cursor: pointer;
+  transition: background 0.3s ease;
+}
+
+.course-card .register-btn:hover {
+  background: #218838;
+}
+
+/* Footer */
+footer {
+  background-color: #333;
+  color: white;
+  text-align: center;
+  padding: 20px;
+  width: 100%;
+}
+
+/* Animations */
+@keyframes fadeIn {
+  from {
+    opacity: 0;
+  }
+  to {
+    opacity: 1;
+  }
+}
+
+@keyframes fadeInUp {
+  from {
+    opacity: 0;
+    transform: translateY(20px);
+  }
+  to {
+    opacity: 1;
+    transform: translateY(0);
+  }
+}
