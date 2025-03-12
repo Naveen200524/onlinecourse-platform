@@ -3,8 +3,21 @@ body {
   font-family: "Poppins", sans-serif;
   margin: 0;
   padding: 0;
-  background-color: #f4f4f9;
-  color: #333;
+  background: url('background.jpg') no-repeat center center fixed;
+  background-size: cover;
+  color: #fff; /* Ensuring text visibility */
+}
+
+/* Overlay for readability */
+body::before {
+  content: "";
+  position: fixed;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  background: rgba(0, 0, 0, 0.5);
+  z-index: -1;
 }
 
 /* Header */
@@ -62,7 +75,7 @@ nav ul li a:hover {
 
 /* Hero Section */
 .hero {
-  background: linear-gradient(135deg, #007bff, #00bfff);
+  background: rgba(0, 0, 0, 0.6);
   color: white;
   height: 100vh;
   display: flex;
@@ -129,6 +142,7 @@ nav ul li a:hover {
   padding: 60px 20px;
   text-align: center;
   background: white;
+  color: #333;
 }
 
 .features h2 {
@@ -136,38 +150,6 @@ nav ul li a:hover {
   margin-bottom: 40px;
   font-weight: 600;
   animation: fadeIn 1s ease;
-}
-
-.feature-cards {
-  display: flex;
-  justify-content: center;
-  gap: 30px;
-  flex-wrap: wrap;
-}
-
-.feature-card {
-  background: #f4f4f9;
-  padding: 20px;
-  border-radius: 10px;
-  width: 250px;
-  text-align: center;
-  transition: transform 0.3s ease, box-shadow 0.3s ease;
-}
-
-.feature-card:hover {
-  transform: translateY(-10px);
-  box-shadow: 0 10px 20px rgba(0, 0, 0, 0.1);
-}
-
-.feature-card i {
-  font-size: 2.5em;
-  margin-bottom: 10px;
-  color: #007bff;
-}
-
-.feature-card h3 {
-  margin: 10px 0;
-  font-size: 1.2em;
 }
 
 /* Course Details Section */
@@ -180,248 +162,133 @@ nav ul li a:hover {
   font-size: 2.5em;
   margin-bottom: 20px;
   font-weight: 600;
-  color: #333;
+  color: #fff;
 }
 
 .course-details p {
   font-size: 1.2em;
   margin-bottom: 20px;
+  color: #fff;
 }
 
+/* Video Container Enhancement */
 .video-container {
   margin-top: 30px;
+  position: relative;
+  width: 100%;
+  max-width: 800px;
+  margin-left: auto;
+  margin-right: auto;
+  padding-bottom: 56.25%; /* 16:9 Aspect Ratio */
+  height: 0;
+  overflow: hidden;
 }
 
-/* Signup Section */
+.video-container iframe {
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  border-radius: 8px;
+  box-shadow: 0 4px 15px rgba(0, 0, 0, 0.1);
+}
+
+/* Signup Section (Light Background) */
 .signup-section {
   padding: 100px 20px;
   text-align: center;
-  background: white;
+  background: #f4f4f9; /* Light gray background for contrast */
   min-height: 100vh;
   display: flex;
   flex-direction: column;
   justify-content: center;
   align-items: center;
-}
-
-.signup-section h2 {
-  font-size: 2.5em;
-  margin-bottom: 20px;
-  font-weight: 600;
   color: #333;
-  animation: fadeInUp 1s ease;
-}
-
-.signup-section form {
-  background: #f4f4f9;
-  padding: 30px;
   border-radius: 10px;
-  box-shadow: 0 4px 10px rgba(0, 0, 0, 0.1);
-  width: 100%;
-  max-width: 400px;
-  text-align: left;
-  animation: fadeIn 1s ease;
 }
 
-.signup-section label {
-  display: block;
-  margin-bottom: 8px;
-  font-weight: 500;
-  color: #555;
-}
-
-.signup-section input {
-  width: 100%;
-  padding: 10px;
-  margin-bottom: 20px;
-  border: 1px solid #ddd;
-  border-radius: 5px;
-  font-size: 1em;
-  transition: border-color 0.3s ease;
-}
-
-.signup-section input:focus {
-  border-color: #007bff;
-  outline: none;
-}
-
-.signup-section button {
-  width: 100%;
-  padding: 12px;
-  background: #28a745;
-  color: white;
-  border: none;
-  border-radius: 5px;
-  font-size: 1.1em;
-  font-weight: 600;
-  cursor: pointer;
-  transition: background 0.3s ease;
-}
-
-.signup-section button:hover {
-  background: #218838;
-}
-
-.signup-section p {
-  margin-top: 20px;
-  font-size: 0.9em;
-  color: #555;
-}
-
-.signup-section a {
-  color: #007bff;
-  text-decoration: none;
-  transition: color 0.3s ease;
-}
-
-.signup-section a:hover {
-  color: #0056b3;
-}
-
-/* Login Section */
+/* Modern Login Section */
 .login-section {
   padding: 100px 20px;
   text-align: center;
-  background: white;
+  background: linear-gradient(135deg, #2b5876, #4e4376); /* Cool gradient background */
   min-height: 100vh;
   display: flex;
   flex-direction: column;
   justify-content: center;
   align-items: center;
+  color: white;
 }
 
-.login-section h2 {
-  font-size: 2.5em;
-  margin-bottom: 20px;
-  font-weight: 600;
-  color: #333;
-  animation: fadeInUp 1s ease;
-}
-
+/* Glassmorphism Effect */
 .login-section form {
-  background: #f4f4f9;
+  background: rgba(255, 255, 255, 0.1);
+  backdrop-filter: blur(10px);
+  -webkit-backdrop-filter: blur(10px);
   padding: 30px;
   border-radius: 10px;
-  box-shadow: 0 4px 10px rgba(0, 0, 0, 0.1);
+  box-shadow: 0 4px 15px rgba(0, 0, 0, 0.2);
   width: 100%;
   max-width: 400px;
   text-align: left;
-  animation: fadeIn 1s ease;
+  animation: fadeInUp 0.8s ease-in-out;
 }
 
-.login-section label {
-  display: block;
-  margin-bottom: 8px;
-  font-weight: 500;
-  color: #555;
-}
-
+/* Input Fields */
 .login-section input {
   width: 100%;
-  padding: 10px;
-  margin-bottom: 20px;
-  border: 1px solid #ddd;
+  padding: 12px;
+  margin-bottom: 15px;
+  border: none;
   border-radius: 5px;
   font-size: 1em;
-  transition: border-color 0.3s ease;
+  background: rgba(255, 255, 255, 0.2);
+  color: white;
+  outline: none;
+  transition: background 0.3s ease;
+}
+
+.login-section input::placeholder {
+  color: #ddd;
 }
 
 .login-section input:focus {
-  border-color: #007bff;
-  outline: none;
+  background: rgba(255, 255, 255, 0.3);
 }
 
+/* Login Button */
 .login-section button {
   width: 100%;
   padding: 12px;
-  background: #28a745;
-  color: white;
+  background: #ff9800;
   border: none;
   border-radius: 5px;
   font-size: 1.1em;
   font-weight: 600;
   cursor: pointer;
-  transition: background 0.3s ease;
+  transition: background 0.3s ease-in-out;
+  color: white;
 }
 
 .login-section button:hover {
-  background: #218838;
+  background: #ff7300;
 }
 
+/* Links */
 .login-section p {
-  margin-top: 20px;
+  margin-top: 15px;
   font-size: 0.9em;
-  color: #555;
 }
 
 .login-section a {
-  color: #007bff;
+  color: #ff9800;
   text-decoration: none;
-  transition: color 0.3s ease;
+  transition: color 0.3s ease-in-out;
 }
 
 .login-section a:hover {
-  color: #0056b3;
-}
-
-/* Dashboard Section */
-.dashboard {
-  padding: 100px 20px;
-  text-align: center;
-}
-
-.dashboard h2 {
-  font-size: 2.5em;
-  margin-bottom: 20px;
-  font-weight: 600;
-  color: #333;
-}
-
-.course-list {
-  display: flex;
-  flex-wrap: wrap;
-  justify-content: center;
-  gap: 20px;
-}
-
-.course-card {
-  background: #f4f4f9;
-  padding: 20px;
-  border-radius: 10px;
-  width: 300px;
-  text-align: left;
-  transition: transform 0.3s ease, box-shadow 0.3s ease;
-}
-
-.course-card:hover {
-  transform: translateY(-10px);
-  box-shadow: 0 10px 20px rgba(0, 0, 0, 0.1);
-}
-
-.course-card h3 {
-  margin: 0 0 10px;
-  font-size: 1.5em;
-  font-weight: 600;
-}
-
-.course-card p {
-  margin: 0 0 10px;
-  font-size: 1em;
-  color: #555;
-}
-
-.course-card .register-btn {
-  background: #28a745;
-  color: white;
-  border: none;
-  padding: 10px 20px;
-  border-radius: 5px;
-  cursor: pointer;
-  transition: background 0.3s ease;
-}
-
-.course-card .register-btn:hover {
-  background: #218838;
+  color: #ff7300;
 }
 
 /* Footer */

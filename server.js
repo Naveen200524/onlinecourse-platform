@@ -1,9 +1,28 @@
 const express = require("express");
 const cors = require("cors");
+const mongoose = require("mongoose");
 
 const app = express();
 app.use(cors());
 app.use(express.json());
+
+// MongoDB Connection
+mongoose.connect('mongodb://localhost:27017/courseplatform', {
+  useNewUrlParser: true,
+  useUnifiedTopology: true
+})
+.then(() => console.log('MongoDB Connected'))
+.catch(err => console.log('MongoDB Connection Error:', err));
+
+// MongoDB Course Schema
+const courseSchema = new mongoose.Schema({
+  title: String,
+  description: String,
+  instructor: String,
+  youtubeLink: String
+});
+
+const Course = mongoose.model('Course', courseSchema);
 
 // Temporary in-memory storage for users (for signup and login)
 let users = [
@@ -48,6 +67,40 @@ app.post("/api/student-login", (req, res) => {
   } else {
     console.log("Login failed: Invalid email or password"); // Log failed login
     res.json({ success: false, message: "Invalid email or password." });
+  }
+});
+
+// Add course API
+app.post("/api/courses", async (req, res) => {
+  try {
+    const newCourse = new Course(req.body);
+    await newCourse.save();
+    res.json({ success: true, course: newCourse });
+  } catch (error) {
+    res.status(500).json({ success: false, message: error.message });
+  }
+});
+
+// Get all courses API
+app.get("/api/courses", async (req, res) => {
+  try {
+    const courses = await Course.find();
+    res.json(courses);
+  } catch (error) {
+    res.status(500).json({ success: false, message: error.message });
+  }
+});
+
+// Get course by ID API
+app.get("/api/courses/:id", async (req, res) => {
+  try {
+    const course = await Course.findById(req.params.id);
+    if (!course) {
+      return res.status(404).json({ success: false, message: "Course not found" });
+    }
+    res.json({ success: true, course });
+  } catch (error) {
+    res.status(500).json({ success: false, message: error.message });
   }
 });
 
